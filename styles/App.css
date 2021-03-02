@@ -4,11 +4,26 @@ body {
   overflow-y: scroll;
 }
 
-.App {
+.main-container {
   width: 500px;
   margin: 50px auto;
   max-width: 100%;
   /* background-color: black; */
+}
+
+.item-page {
+  height: 100vh;
+}
+
+.item-page h3 {
+  text-align: center;
+  color: antiquewhite;
+}
+
+a {
+  font-size: larger;
+  color: #dde0e4;
+  text-decoration: none;
 }
 
 .meme-container {
@@ -37,6 +52,17 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.social-share-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.social-share-buttons-container svg {
+  margin: 5px;
 }
 
 .loading-container {
