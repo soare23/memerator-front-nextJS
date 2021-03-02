@@ -1,6 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
 import { useState } from 'react';
-import { Magnifier, TOUCH_ACTIVATION } from 'react-image-magnifiers';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
@@ -21,7 +21,12 @@ function Meme({ title, url, handleError, index }) {
   return (
     <div>
       <div className="title-share-button-container">
-        <h3>{title}</h3>
+        <div className="link-container">
+          <Link href="/item">
+            <a>{title}</a>
+          </Link>
+        </div>
+
         <CopyToClipboard text={url} onCopy={() => setPostCopied(true)}>
           <Button
             variant="contained"
@@ -41,19 +46,13 @@ function Meme({ title, url, handleError, index }) {
           </Button>
         </CopyToClipboard>
       </div>
-
-      <div>
-        <Magnifier
-          style={{ maxWidth: '100%' }}
-          imageSrc={url}
-          imageAlt="meme"
-          dragToMove={false}
-          touchActivation={TOUCH_ACTIVATION.DOUBLE_TAP}
-          onImageLoad={(e) => {
-            handleError(e, index);
-          }}
-        />
-      </div>
+      <img
+        src={url}
+        key={index}
+        onLoad={(e) => {
+          handleError(e, index);
+        }}
+      ></img>
     </div>
   );
 }
