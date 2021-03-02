@@ -91,7 +91,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="App">
+      <div className="main-container">
         {posts.map((post, index) =>
           post.type === 'image' ? (
             <div key={index} className="meme-container">
