@@ -14,9 +14,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Meme({ title, url, handleError, index }) {
+function Meme({ title, url, handleError, index, id }) {
   const [postCopied, setPostCopied] = useState(false);
   const classes = useStyles();
+  console.log(id);
 
   return (
     <div>
@@ -46,13 +47,15 @@ function Meme({ title, url, handleError, index }) {
           </Button>
         </CopyToClipboard>
       </div>
-      <img
-        src={url}
-        key={index}
-        onLoad={(e) => {
-          handleError(e, index);
-        }}
-      ></img>
+      <Link as={`/posts/${id}`} href={'/posts/postID'}>
+        <img
+          src={url}
+          key={index}
+          onLoad={(e) => {
+            handleError(e, index);
+          }}
+        ></img>
+      </Link>
     </div>
   );
 }
