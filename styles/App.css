@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 .meme-container {
   margin-top: 30px;
   text-align: center;
