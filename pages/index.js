@@ -27,6 +27,7 @@ export default function Home() {
       axios
         .get(`https://www.opsolutions.ro/memes/?lastId=${lastPostId}`)
         .then(({ data }) => {
+          console.log(data);
           setPosts((prevState) => [...prevState, ...data]);
           setIsLoading(false);
         });
@@ -100,6 +101,7 @@ export default function Home() {
                 url={post.mediaUrl}
                 handleError={handleError}
                 index={index}
+                id={post.id}
               ></Meme>
             </div>
           ) : (
