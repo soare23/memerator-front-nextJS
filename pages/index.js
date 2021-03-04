@@ -27,7 +27,6 @@ export default function Home() {
       axios
         .get(`https://www.opsolutions.ro/memes/?lastId=${lastPostId}`)
         .then(({ data }) => {
-          console.log(data);
           setPosts((prevState) => [...prevState, ...data]);
           setIsLoading(false);
         });
@@ -111,6 +110,7 @@ export default function Home() {
                 type={post.type}
                 url={post.mediaUrl}
                 index={index}
+                id={post.id}
               ></VideoMeme>
             </div>
           )
