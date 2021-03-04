@@ -2,6 +2,8 @@ body {
   background-color: #18191a;
   overflow-x: hidden;
   overflow-y: scroll;
+  font-family: 'Noto Sans', sans-serif;
+  color: #dde0e4;
 }
 
 .main-container {
@@ -17,7 +19,8 @@ body {
 
 .item-page h3 {
   text-align: center;
-  color: antiquewhite;
+  font-family: 'Noto Sans', sans-serif;
+  color: #dde0e4;
 }
 
 a {
@@ -67,6 +70,16 @@ img:hover {
 
 .social-share-buttons-container svg {
   margin: 5px;
+}
+
+.share-buttons-main-page-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.share-buttons-main-page-container button {
+  margin: 10px;
 }
 
 .loading-container {
