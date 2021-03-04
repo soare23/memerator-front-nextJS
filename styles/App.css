@@ -82,6 +82,12 @@ img:hover {
   margin: 10px;
 }
 
+.see-more-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
 .loading-container {
   display: flex;
   justify-content: center;
