@@ -1,4 +1,6 @@
-import { React, useEffect, useState } from 'react';
+import { React } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { Magnifier, TOUCH_ACTIVATION } from 'react-image-magnifiers';
 import {
@@ -26,7 +28,18 @@ import {
   WhatsappIcon,
 } from 'react-share';
 
+// material UI
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
+
 export function ImagePost({ postDetails }) {
+  const classes = useStyles();
+
   // create shareable URL
   let urlToShare = `https://customstreams.co/posts/${postDetails.id}`;
 
@@ -43,7 +56,6 @@ export function ImagePost({ postDetails }) {
           dragToMove={false}
           touchActivation={TOUCH_ACTIVATION.DOUBLE_TAP}
         />
-        ;
       </div>
     );
   } else if (postDetails.type === 'reddit-video') {
@@ -71,9 +83,12 @@ export function ImagePost({ postDetails }) {
     <div className="main-container item-page">
       <h3>{postDetails.title}</h3>
       {postToShow}
-      <div>
-        <h3>Share it with your friends!</h3>
+      <div className="see-more-button-container">
+        <Button variant="outlined" color="secondary">
+          <a href="/">See more</a>
+        </Button>
       </div>
+      <hr></hr>
       <div className="social-share-buttons-container">
         <FacebookShareButton url={urlToShare} title={postDetails.title}>
           <FacebookIcon size={45} round={true}></FacebookIcon>
