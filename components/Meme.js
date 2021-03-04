@@ -30,11 +30,11 @@ function Meme({ title, url, handleError, index, id }) {
   return (
     <div>
       <div className="title-share-button-container">
-        <div className="link-container">
+        <h3>
           <a href={`/posts/${id}`} target="_blank">
-            <a>{title}</a>
+            {title}
           </a>
-        </div>
+        </h3>
 
         <CopyToClipboard text={urlToShare} onCopy={() => setPostCopied(true)}>
           <Button
@@ -65,7 +65,7 @@ function Meme({ title, url, handleError, index, id }) {
         ></img>
       </a>
       <div className="share-buttons-main-page-container">
-        <h3>Share it</h3>
+        <h3>SHARE</h3>
         <div>
           <FacebookShareButton url={urlToShare} title={title}>
             <FacebookIcon size={45} round={true}></FacebookIcon>
