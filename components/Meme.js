@@ -5,6 +5,12 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import {
+  FacebookShareButton,
+  FacebookMessengerShareButton,
+  WhatsappShareButton,
+} from 'react-share';
+import { FacebookIcon, FacebookMessengerIcon, WhatsappIcon } from 'react-share';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -17,18 +23,20 @@ const useStyles = makeStyles((theme) => ({
 function Meme({ title, url, handleError, index, id }) {
   const [postCopied, setPostCopied] = useState(false);
   const classes = useStyles();
-  console.log(id);
+
+  // post URL
+  let urlToShare = `https://customstreams.co/posts/${id}`;
 
   return (
     <div>
       <div className="title-share-button-container">
         <div className="link-container">
-          <Link href="/item">
+          <a href={`/posts/${id}`} target="_blank">
             <a>{title}</a>
-          </Link>
+          </a>
         </div>
 
-        <CopyToClipboard text={url} onCopy={() => setPostCopied(true)}>
+        <CopyToClipboard text={urlToShare} onCopy={() => setPostCopied(true)}>
           <Button
             variant="contained"
             color="primary"
@@ -47,7 +55,7 @@ function Meme({ title, url, handleError, index, id }) {
           </Button>
         </CopyToClipboard>
       </div>
-      <Link as={`/posts/${id}`} href={'/posts/postID'}>
+      <a href={`/posts/${id}`} target="_blank">
         <img
           src={url}
           key={index}
@@ -55,7 +63,25 @@ function Meme({ title, url, handleError, index, id }) {
             handleError(e, index);
           }}
         ></img>
-      </Link>
+      </a>
+      <div className="share-buttons-main-page-container">
+        <h3>Share it</h3>
+        <div>
+          <FacebookShareButton url={urlToShare} title={title}>
+            <FacebookIcon size={45} round={true}></FacebookIcon>
+          </FacebookShareButton>
+          <FacebookMessengerShareButton url={urlToShare} title={title}>
+            <FacebookMessengerIcon
+              size={45}
+              round={true}
+            ></FacebookMessengerIcon>
+          </FacebookMessengerShareButton>
+          <WhatsappShareButton url={urlToShare} title={title}>
+            <WhatsappIcon size={45} round={true}></WhatsappIcon>
+          </WhatsappShareButton>
+        </div>
+      </div>
+      <hr></hr>
     </div>
   );
 }
