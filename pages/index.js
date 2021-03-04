@@ -15,13 +15,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
-  const [posts, setPosts] = useState([]);
+export default function Home({ initialPosts }) {
+  const [posts, setPosts] = useState(initialPosts);
   const [isLoading, setIsLoading] = useState(true);
   const classes = useStyles();
 
   function getPosts() {
-    // http://opsolutions.ro:4000/memes?lastId=4636
     if (posts.length > 0) {
       let lastPostId = posts[posts.length - 1].id;
       axios
@@ -125,4 +124,13 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const response = await axios.get(`https://www.opsolutions.ro/memes`);
+  return {
+    props: {
+      initialPosts: response.data,
+    },
+  };
 }
