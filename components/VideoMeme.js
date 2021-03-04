@@ -29,9 +29,12 @@ function VideoMeme({ title, type, url, index, id }) {
   return (
     <div key={index}>
       <div className="title-share-button-container">
-        <a href={`/posts/${id}`} target="_blank">
-          <h3>{title}</h3>
-        </a>
+        <h3>
+          <a href={`/posts/${id}`} target="_blank">
+            {title}
+          </a>
+        </h3>
+
         <CopyToClipboard text={urlToShare} onCopy={() => setPostCopied(true)}>
           <Button
             variant="contained"
