@@ -5,8 +5,6 @@ import { BurgerMenuContext } from '../context/BurgerMenuContext';
 function BurgerMenuIcon() {
   let collapse = useContext(BurgerMenuContext);
 
-  console.log(collapse.collapseTrigger);
-
   return (
     <div
       className="burger-menu-container"
