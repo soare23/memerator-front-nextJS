@@ -4,6 +4,7 @@ body {
   overflow-y: scroll;
   font-family: 'Noto Sans', sans-serif;
   color: #dde0e4;
+  padding-top: 50px;
 }
 
 .main-container {
@@ -11,10 +12,6 @@ body {
   margin: 50px auto;
   max-width: 100%;
   /* background-color: black; */
-}
-
-.item-page {
-  height: 100vh;
 }
 
 .item-page h3 {
