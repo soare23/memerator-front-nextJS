@@ -8,11 +8,12 @@ function LateralNavbar() {
   const ref = useRef();
 
   if (typeof window !== 'undefined') {
+    console.log(collapse.collapseTrigger);
     if (collapse.collapseTrigger) {
-      document.getElementById('lateral-navbar').classList.add('show');
+      document.getElementById('lateral-navbar').classList.add('hide');
       document.getElementById('overlay').style.display = 'none';
     } else {
-      document.getElementById('lateral-navbar').classList.remove('show');
+      document.getElementById('lateral-navbar').classList.remove('hide');
       document.getElementById('overlay').style.display = 'block';
     }
   }

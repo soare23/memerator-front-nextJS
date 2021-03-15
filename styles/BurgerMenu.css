@@ -1,5 +1,6 @@
 .burger-menu-container{
     display: none;
+    cursor: pointer;
 }
 
 .burger-slice {
