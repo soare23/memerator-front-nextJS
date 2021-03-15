@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 export const BurgerMenuContext = createContext();
 
 export const BurgerMenuProvider = (props) => {
-  const [collapseTrigger, setCollapseTrigger] = useState(false);
+  const [collapseTrigger, setCollapseTrigger] = useState(true);
 
   function handleClick() {
     setCollapseTrigger(!collapseTrigger);
