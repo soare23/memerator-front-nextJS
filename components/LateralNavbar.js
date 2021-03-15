@@ -18,7 +18,9 @@ function LateralNavbar() {
   }
 
   clickedOutsideHook(ref, () => {
-    collapse.collapseTriggerFunction();
+    if (!collapse.collapseTrigger) {
+      collapse.collapseTriggerFunction();
+    }
   });
 
   return (
