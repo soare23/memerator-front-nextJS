@@ -28,10 +28,10 @@
       left: 100%;
       z-index: 3;
       transition: transform .5s ease;
-      transform: translateX(-100%);
+      transform: translateX(0%);
     }
     .lateral-navbar.hide {
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
 
 }

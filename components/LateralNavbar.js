@@ -10,10 +10,10 @@ function LateralNavbar() {
   if (typeof window !== 'undefined') {
     console.log(collapse.collapseTrigger);
     if (collapse.collapseTrigger) {
-      document.getElementById('lateral-navbar').classList.add('hide');
+      document.getElementById('lateral-navbar').classList.remove('hide');
       document.getElementById('overlay').style.display = 'none';
     } else {
-      document.getElementById('lateral-navbar').classList.remove('hide');
+      document.getElementById('lateral-navbar').classList.add('hide');
       document.getElementById('overlay').style.display = 'block';
     }
   }
