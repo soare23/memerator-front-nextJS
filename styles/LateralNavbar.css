@@ -4,8 +4,14 @@
     text-align: center;
     top: 100px;
     left: calc(50% - 550px);
-    background-color: red;
+    background-color: transparent;
     max-height: calc(100vh - 100px);
+    height: 100vh;
+}
+
+
+.access-buttons-lateral-navbar {
+    display: none;
 }
 
 .overlay {
@@ -29,10 +35,21 @@
       z-index: 3;
       transition: transform .5s ease;
       transform: translateX(0%);
+      height: 100vh;
+      top: 0;
+      max-height: 100%;
+      background-color: #303030;
     }
     .lateral-navbar.hide {
         transform: translateX(-100%);
     }
+
+    .access-buttons-lateral-navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 
 }
 
