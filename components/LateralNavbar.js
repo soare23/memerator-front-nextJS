@@ -30,6 +30,7 @@ function LateralNavbar() {
   clickedOutsideHook(ref, () => {
     if (!collapse.collapseTrigger) {
       collapse.collapseTriggerFunction();
+      handleCloseModal();
     }
   });
 

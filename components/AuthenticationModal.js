@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 
 function AuthenticationModal({ show, closeModal, isLoginModal }) {
   const [userDetails, setUserDetails] = useState();
+  const [verifyPassword, setVerifyPassword] = useState();
 
   if (!show) {
     return null;
@@ -21,7 +22,7 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
               onChange={(e) => {
                 const s = { ...user };
                 s.username = e.target.value;
-                setUser(s);
+                setUserDetails(s);
               }}
             />
           </div>
@@ -36,7 +37,7 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
               onChange={(e) => {
                 const s = { ...user };
                 s.password = e.target.value;
-                setUser(s);
+                setUserDetails(s);
               }}
             />
           </div>
@@ -57,7 +58,7 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
               onChange={(e) => {
                 const s = { ...user };
                 s.firstName = e.target.value;
-                setUser(s);
+                setUserDetails(s);
               }}
             />
           </div>
@@ -72,7 +73,7 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
               onChange={(e) => {
                 const s = { ...user };
                 s.lastName = e.target.value;
-                setUser(s);
+                setUserDetails(s);
               }}
             />
           </div>
@@ -87,7 +88,7 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
               onChange={(e) => {
                 const s = { ...user };
                 s.username = e.target.value;
-                setUser(s);
+                setUserDetails(s);
               }}
             />
           </div>
@@ -102,7 +103,7 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
               onChange={(e) => {
                 const s = { ...user };
                 s.email = e.target.value;
-                setUser(s);
+                setUserDetails(s);
               }}
             />
           </div>
@@ -117,7 +118,7 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
               onChange={(e) => {
                 const s = { ...user };
                 s.password = e.target.value;
-                setUser(s);
+                setUserDetails(s);
               }}
             />
           </div>
