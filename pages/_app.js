@@ -2,6 +2,7 @@ import '../styles/App.css';
 import '../styles/Navbar.css';
 import '../styles/LateralNavbar.css';
 import '../styles/BurgerMenu.css';
+import '../styles/AuthenticationModal.css';
 import LateralNavbar from '../components/LateralNavbar';
 import Navbar from '../components/Navbar';
 import BurgerMenu from '../components/BurgerMenuIcon';
