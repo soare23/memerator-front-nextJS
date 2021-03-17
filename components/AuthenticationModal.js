@@ -26,7 +26,16 @@ function AuthenticationModal({ show, closeModal, isLoginModal }) {
   }
 
   if (!show) {
+    if (typeof window !== 'undefined') {
+      document.body.style.overflow = 'auto';
+      document.body.style.height = 'auto';
+    }
     return null;
+  } else {
+    if (typeof window !== 'undefined') {
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100%';
+    }
   }
 
   return (

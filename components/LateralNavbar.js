@@ -28,13 +28,16 @@ function LateralNavbar() {
   }
 
   if (typeof window !== 'undefined') {
-    console.log(collapse.collapseTrigger);
     if (collapse.collapseTrigger) {
       document.getElementById('lateral-navbar').classList.remove('hide');
       document.getElementById('overlay').style.display = 'none';
+      document.body.style.overflow = 'auto';
+      document.body.style.height = 'auto';
     } else {
       document.getElementById('lateral-navbar').classList.add('hide');
       document.getElementById('overlay').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100%';
     }
   }
 
