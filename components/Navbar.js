@@ -1,7 +1,18 @@
 import { React, useState } from 'react';
 import AuthenticationModal from '../components/AuthenticationModal';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 function Navbar() {
+  const classes = useStyles();
   const [showAuthenticationModal, setShowAuthenticationModal] = useState(false);
   const [isLoginModal, setIsLoginModal] = useState(false);
 
@@ -12,27 +23,34 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div>
-        <h3>This is the navbar</h3>
+      <div className="navbar-elements-container">
+        <div className="navbar-elements">Current Stream</div>
+        <div className="navbar-elements">Make new stream +</div>
+        <div className="access-buttons navbar-elements">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setShowAuthenticationModal(true);
+              setIsLoginModal(true);
+            }}
+          >
+            Log in
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => setShowAuthenticationModal(true)}
+          >
+            Sign up
+          </Button>
+        </div>
+        <AuthenticationModal
+          show={showAuthenticationModal}
+          closeModal={handleCloseModal}
+          isLoginModal={isLoginModal}
+        ></AuthenticationModal>
       </div>
-      <div className="access-buttons">
-        <button
-          onClick={() => {
-            setShowAuthenticationModal(true);
-            setIsLoginModal(true);
-          }}
-        >
-          Log in
-        </button>
-        <button onClick={() => setShowAuthenticationModal(true)}>
-          Sign up
-        </button>
-      </div>
-      <AuthenticationModal
-        show={showAuthenticationModal}
-        closeModal={handleCloseModal}
-        isLoginModal={isLoginModal}
-      ></AuthenticationModal>
     </div>
   );
 }

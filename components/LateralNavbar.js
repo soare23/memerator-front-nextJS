@@ -3,8 +3,19 @@ import { useContext } from 'react';
 import { BurgerMenuContext } from '../context/BurgerMenuContext';
 import clickedOutsideHook from '../util/clickedOutsideHook';
 import AuthenticationModal from '../components/AuthenticationModal';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 function LateralNavbar() {
+  const classes = useStyles();
   let collapse = useContext(BurgerMenuContext);
   const ref = useRef();
 
@@ -40,17 +51,23 @@ function LateralNavbar() {
       <div className="lateral-navbar" id="lateral-navbar" ref={ref}>
         <p>Welcome user</p>
         <div className="access-buttons-lateral-navbar">
-          <button
+          <Button
+            variant="contained"
+            color="primary"
             onClick={() => {
               setShowAuthenticationModal(true);
               setIsLoginModal(true);
             }}
           >
             Log in
-          </button>
-          <button onClick={() => setShowAuthenticationModal(true)}>
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => setShowAuthenticationModal(true)}
+          >
             Sign up
-          </button>
+          </Button>
         </div>
         <p>My custom stream</p>
         <h3>Memes</h3>

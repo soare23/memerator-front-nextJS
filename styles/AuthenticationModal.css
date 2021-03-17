@@ -15,6 +15,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
+}
+
+.authentication-modal-buttons button {
+    margin: 5px;
+}
+
+.authentication-modal {
+    background-color: black;
+    width: 300px;
+    height: auto;
+    border: solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.authentication-modal input {
+    width: 200px;
+    margin: 15px;
+    text-align: center;
 }
 
 
